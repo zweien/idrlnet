@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [master]
   release:
-    types: [created, edited]
+    types: [published, edited]
 
 
 jobs:
@@ -27,7 +27,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Print event_name
-        run: echo "${{github}}, ${{ github.event_name }}, ${{ github.event.release.tag_name }}"
+        run: echo "$GITHUB_EVENT_NAME, ${{ github.event_name }}, ${{ github.event.release.tag_name }}"
 
       -
         name: Get release version
