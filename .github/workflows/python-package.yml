@@ -36,13 +36,5 @@ jobs:
     - name: Test with pytest
       run: |
         python examples/simple_poisson/simple_poisson.py
-    
-    - name: Publish to PyPI
-      env:
-        TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
-        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-      run: |
-        python setup.py sdist bdist_wheel
-        twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
 
