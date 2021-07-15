@@ -2,6 +2,7 @@ name: docker-build-push
 
 on:
   push:
+    branches: [master]
   pull_request:
     branches: [master]
   release:
